@@ -12,14 +12,18 @@ require('dotenv').config();
 
 const PORT = process.env.LINEBOX_PORT || 8000;
 const HTTP2 = process.env.LINEBOX_HTTP2 || false;
+let server;
 
-const serverOptions = {
-  key: fs.readFileSync(process.env.CERT_KEY_PATH),
-  cert: fs.readFileSync(process.env.CERT_PATH),
-  allowHTTP1: true,
-};
-
-const server = HTTP2 ? http2.createSecureServer(serverOptions, app) : http.createServer(app);
+if (HTTP2) {
+  const serverOptions = {
+    key: fs.readFileSync(process.env.CERT_KEY_PATH),
+    cert: fs.readFileSync(process.env.CERT_PATH),
+    allowHTTP1: true,
+  };
+  server = http2.createSecureServer(serverOptions, app);
+} else {
+  server = http.createServer(app);
+}
 
 async function startServer() {
   server.listen(PORT, () => {
