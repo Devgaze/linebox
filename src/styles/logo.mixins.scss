@@ -1,0 +1,44 @@
+// logo position mixin
+@mixin logoCoordinates($top, $right) {
+  top: $top;
+  right: $right;
+}
+
+@mixin logoBoxSize($box-size) {
+  width: $box-size;
+  height: $box-size;
+}
+
+// transform face mixin
+@mixin transformFace($z-value) {
+  .front {
+    -webkit-transform: translateZ($z-value);
+    transform: translateZ($z-value);
+  }
+  
+  .back {
+    -webkit-transform: rotateY(180deg) translateZ($z-value);
+    transform: rotateY(180deg) translateZ($z-value);
+  }
+  
+  .right {
+    -webkit-transform: rotateY(90deg) translateZ($z-value);
+    transform: rotateY(90deg) translateZ($z-value);
+  }
+  
+  .left {
+    -webkit-transform: rotateY(-90deg) translateZ($z-value);
+    transform: rotateY(-90deg) translateZ($z-value);
+  }
+  
+  .top {
+    -webkit-transform: rotateX(90deg) translateZ($z-value);
+    transform: rotateX(90deg) translateZ($z-value);
+  }
+  
+  .bottom {
+    -webkit-transform: rotateX(-90deg) translateZ($z-value);
+    transform: rotateX(-90deg) translateZ($z-value);
+  }
+  
+}

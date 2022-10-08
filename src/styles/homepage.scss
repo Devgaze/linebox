@@ -1,0 +1,182 @@
+$top-spacer: 2rem;
+
+.highlight {
+  color: green;
+  font-weight: 500;
+}
+
+.form-control {
+  border: 1px solid lightgrey;
+  border-radius: .25rem;
+  padding: .25rem 0.5rem;
+  margin-bottom: .5rem;
+  display: inline-block;
+}
+
+.important {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
+
+.intro {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 640px;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  p:first-of-type {
+    margin-bottom: 0.5rem;
+    // text-align: center;
+  }
+  p {
+    font-size: .9rem;
+  }
+
+}
+
+.cta {
+  background-color: green;
+
+  .page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 640px;
+  }
+  
+  .cta-copy {
+    text-align: left;
+    color: white;
+    p {
+      padding-right: 1rem;
+    }
+  }
+  
+  form {
+    text-align: right;
+
+    input[type=submit] {
+      background-color: #ddf4fc;
+      color: #024460;
+    }
+  }
+
+}
+
+.animation {
+  position: relative;
+  min-height: 200px;
+  max-height: 300px;
+  margin-bottom: 5rem;
+  
+  #sustainable-development {
+    max-height: 300px;
+  }
+  #windturbine-svg {
+    height: 150px;
+
+    position: absolute;
+    top: 0;
+    left: -25px;
+
+  }
+  #Blades {
+    -webkit-animation-name: blade-rotation;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: initial;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+            animation-name: blade-rotation;
+            animation-duration: 7s;
+            animation-timing-function: linear;
+            animation-delay: initial;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+  }
+
+  #Conn1, #Conn2, #Conn3 {
+    animation: dash 15s linear forwards infinite;
+  }
+}
+
+$origin-x: 100px;
+$origin-y: 188px;
+
+@-webkit-keyframes blade-rotation {
+  0% {
+   -webkit-transform: rotate(0deg);
+   -webkit-transform-origin: $origin-x $origin-y;
+  }
+  50% {
+   -webkit-transform: rotate(180deg);
+   -webkit-transform-origin: $origin-x $origin-y;
+  }
+  100% {
+   -webkit-transform: rotate(360deg);
+   -webkit-transform-origin: $origin-x $origin-y;
+  }
+}
+
+@keyframes blade-rotation {
+  0% {
+   transform: rotate(0deg);
+   transform-origin: $origin-x $origin-y;
+  }
+  50% {
+   transform: rotate(180deg);
+   transform-origin: $origin-x $origin-y;
+  }
+  100% {
+   transform: rotate(360deg);
+   transform-origin: $origin-x $origin-y;
+  }
+}
+
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.client-needs {
+  margin-top: $top-spacer;
+  ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    min-height: 100px;
+    text-align: center;
+  }
+}
+
+.client-challenges {
+  margin-top: $top-spacer;
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
+.why-us {
+  margin-top: $top-spacer;
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}

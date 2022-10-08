@@ -1,0 +1,76 @@
+// mobile measures
+$mobile-logo-size: 300px;
+$mobile-box-size: 36px;
+$mobile-translate-z: 19px;
+$mobile-logo-position-top: 19%;
+$mobile-logo-position-right: 19%;
+
+// tables
+$tablet-logo-size: 500px;
+$tablet-box-size: 60px;
+$tablet-translate-z: 31px;
+
+@import "logo.mixins";
+
+.logo-container {
+  margin: 0 auto;
+  text-align: center;
+  perspective: 500px;
+  position: relative;
+  width: $mobile-logo-size;
+  
+  .logo {
+    // padding-bottom: 32%;
+    vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  #logo-name {
+  }
+  
+  .position-to-logo {
+    position: absolute;
+    @include logoCoordinates($top: $mobile-logo-position-top, $right: $mobile-logo-position-right);
+    -webkit-transition: transform .25s ease-out;  
+        -ms-transition: transform .25s ease-out;
+            transition: transform .25s ease-out;
+  }
+  
+  .box {
+    transform-style: preserve-3d;
+    @include logoBoxSize($box-size: $mobile-box-size);
+
+    -webkit-transition: width .25s ease-out, height .25s ease-out;  
+        -ms-transition: width .25s ease-out, height .25s ease-out;
+            transition: width .25s ease-out, height .25s ease-out;
+  }
+  
+  .box .face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: inherit;
+    border: 1px solid green;
+  }
+  
+  
+  @include transformFace($z-value: $mobile-translate-z);
+  
+}
+
+@media (min-width: 600px) {
+  .logo-container {
+    width: $tablet-logo-size;
+    
+    .box {
+      @include logoBoxSize($box-size: $tablet-box-size);
+    }
+  
+    @include transformFace($z-value: $tablet-translate-z);
+  }
+
+}

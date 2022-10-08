@@ -1,0 +1,40 @@
+{
+  "name": "linebox",
+  "version": "1.0.0",
+  "description": "linebox.io home repo",
+  "main": "src/server.js",
+  "scripts": {
+    "sass-watch": "sass --watch src/styles/main.scss public/styles/app.css",
+    "sass": "sass src/styles/main.scss public/styles/app.css",
+    "watch": "npm run sass-watch & nodemon src/server.js -e js,hbs --trace-warnings",
+    "start": "npm run sass && node src/server.js",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devgaze/linebox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devgaze/linebox/issues"
+  },
+  "homepage": "https://github.com/Devgaze/linebox#readme",
+  "devDependencies": {
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0",
+    "supertest": "^6.2.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "http2-express-bridge": "^1.0.7",
+    "sib-api-v3-sdk": "^8.4.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
