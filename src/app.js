@@ -3,9 +3,13 @@ const path = require('path');
 
 const express = require('express');
 
+require('dotenv').config();
+
+const HTTP2 = process.env.LINEBOX_HTTP2 || false;
+
 const http2Express = require('http2-express-bridge');
 
-const app = http2Express(express);
+const app = HTTP2 ? http2Express(express) : express();
 
 const PUBLIC_DIRECTORY = path.join(__dirname, '..', 'public');
 const VIEWS_DIRECTORY = path.join(__dirname, 'views');

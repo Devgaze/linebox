@@ -54,8 +54,8 @@ body .logo-container .logo {
 }
 body .logo-container .position-to-logo {
   position: absolute;
-  top: 19%;
-  right: 19%;
+  top: 27%;
+  right: 22%;
   -webkit-transition: transform 0.25s ease-out;
   -ms-transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
@@ -105,6 +105,10 @@ body .logo-container .bottom {
 @media (min-width: 600px) {
   body .logo-container {
     width: 500px;
+  }
+  body .logo-container .position-to-logo {
+    top: 25%;
+    right: 20%;
   }
   body .logo-container .box {
     width: 60px;
