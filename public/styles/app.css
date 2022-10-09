@@ -40,19 +40,22 @@ body .page-container {
 body .text-center {
   text-align: center;
 }
-body .logo-container {
+body .header {
+  padding-top: 2rem;
+}
+body .header .logo-container {
   margin: 0 auto;
   text-align: center;
   perspective: 500px;
   position: relative;
   width: 300px;
 }
-body .logo-container .logo {
+body .header .logo-container .logo {
   vertical-align: middle;
   margin: 0 auto;
   overflow: hidden;
 }
-body .logo-container .position-to-logo {
+body .header .logo-container .position-to-logo {
   position: absolute;
   top: 27%;
   right: 22%;
@@ -60,7 +63,7 @@ body .logo-container .position-to-logo {
   -ms-transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
 }
-body .logo-container .box {
+body .header .logo-container .box {
   transform-style: preserve-3d;
   width: 36px;
   height: 36px;
@@ -68,7 +71,7 @@ body .logo-container .box {
   -ms-transition: width 0.25s ease-out, height 0.25s ease-out;
   transition: width 0.25s ease-out, height 0.25s ease-out;
 }
-body .logo-container .box .face {
+body .header .logo-container .box .face {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,63 +81,63 @@ body .logo-container .box .face {
   backface-visibility: inherit;
   border: 1px solid green;
 }
-body .logo-container .front {
+body .header .logo-container .front {
   -webkit-transform: translateZ(19px);
   transform: translateZ(19px);
 }
-body .logo-container .back {
+body .header .logo-container .back {
   -webkit-transform: rotateY(180deg) translateZ(19px);
   transform: rotateY(180deg) translateZ(19px);
 }
-body .logo-container .right {
+body .header .logo-container .right {
   -webkit-transform: rotateY(90deg) translateZ(19px);
   transform: rotateY(90deg) translateZ(19px);
 }
-body .logo-container .left {
+body .header .logo-container .left {
   -webkit-transform: rotateY(-90deg) translateZ(19px);
   transform: rotateY(-90deg) translateZ(19px);
 }
-body .logo-container .top {
+body .header .logo-container .top {
   -webkit-transform: rotateX(90deg) translateZ(19px);
   transform: rotateX(90deg) translateZ(19px);
 }
-body .logo-container .bottom {
+body .header .logo-container .bottom {
   -webkit-transform: rotateX(-90deg) translateZ(19px);
   transform: rotateX(-90deg) translateZ(19px);
 }
 @media (min-width: 600px) {
-  body .logo-container {
+  body .header .logo-container {
     width: 500px;
   }
-  body .logo-container .position-to-logo {
+  body .header .logo-container .position-to-logo {
     top: 25%;
     right: 20%;
   }
-  body .logo-container .box {
+  body .header .logo-container .box {
     width: 60px;
     height: 60px;
   }
-  body .logo-container .front {
+  body .header .logo-container .front {
     -webkit-transform: translateZ(31px);
     transform: translateZ(31px);
   }
-  body .logo-container .back {
+  body .header .logo-container .back {
     -webkit-transform: rotateY(180deg) translateZ(31px);
     transform: rotateY(180deg) translateZ(31px);
   }
-  body .logo-container .right {
+  body .header .logo-container .right {
     -webkit-transform: rotateY(90deg) translateZ(31px);
     transform: rotateY(90deg) translateZ(31px);
   }
-  body .logo-container .left {
+  body .header .logo-container .left {
     -webkit-transform: rotateY(-90deg) translateZ(31px);
     transform: rotateY(-90deg) translateZ(31px);
   }
-  body .logo-container .top {
+  body .header .logo-container .top {
     -webkit-transform: rotateX(90deg) translateZ(31px);
     transform: rotateX(90deg) translateZ(31px);
   }
-  body .logo-container .bottom {
+  body .header .logo-container .bottom {
     -webkit-transform: rotateX(-90deg) translateZ(31px);
     transform: rotateX(-90deg) translateZ(31px);
   }
@@ -186,6 +189,7 @@ body .cta .cta-copy {
   color: white;
 }
 body .cta .cta-copy p {
+  font-size: 0.9rem;
   padding-right: 1rem;
 }
 body .cta form {
@@ -296,6 +300,7 @@ body .footer {
   margin-top: 5rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 body .footer h4 {
@@ -305,18 +310,12 @@ body .footer h4 {
 body .footer p, body .footer li {
   font-size: 0.75rem;
 }
-body .footer .partnership {
-  min-width: 300;
-  display: flex;
-}
 body .footer .quick-menu,
-body .footer .footer-nav {
-  min-width: 300;
+body .footer .legal {
   display: block;
-  margin: 0 2rem;
 }
 body .footer .quick-menu ul,
-body .footer .footer-nav ul {
+body .footer .legal ul {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -324,7 +323,7 @@ body .footer .footer-nav ul {
   width: 100%;
 }
 body .footer .quick-menu ul li,
-body .footer .footer-nav ul li {
+body .footer .legal ul li {
   margin: 0.5rem 0 0 0;
 }
 body .footer .info {
@@ -332,6 +331,15 @@ body .footer .info {
 }
 body .footer-copy {
   font-size: 0.75rem;
+}
+@media (min-width: 600px) {
+  body .footer {
+    flex-direction: row;
+  }
+  body .footer .quick-menu,
+body .footer .legal {
+    margin: 0 2rem;
+  }
 }
 
 .cube-rotator {
