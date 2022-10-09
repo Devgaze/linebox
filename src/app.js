@@ -1,7 +1,10 @@
 const hbs = require('hbs');
+
 const path = require('path');
 
 const express = require('express');
+
+const compression = require('compression')
 
 require('dotenv').config();
 
@@ -16,6 +19,10 @@ const VIEWS_DIRECTORY = path.join(__dirname, 'views');
 const PARTIALS_DIRECTORY = path.join(VIEWS_DIRECTORY, 'partials');
 
 app.use(express.static(PUBLIC_DIRECTORY));
+
+if (!HTTP2) {
+  app.use(compression())
+}
 
 app.set('view engine', 'hbs');
 app.set('views', VIEWS_DIRECTORY);
