@@ -42,30 +42,45 @@ $top-spacer: 2rem;
 
 .cta {
   background-color: green;
+  color: white;  
 
   .page-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    max-width: 640px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: baseline;
+    max-width: 650px;
   }
   
+  p {
+    font-size: .9rem;
+    padding-right: 1rem;
+  }
+
   .cta-copy {
     text-align: left;
-    color: white;
-    p {
-      font-size: .9rem;
-      padding-right: 1rem;
-    }
   }
   
   form {
-    text-align: right;
+    // text-align: center;
 
     input[type=submit] {
       background-color: #ddf4fc;
       color: #024460;
+    }
+
+    .privacy-note {
+      display: flex;
+      flex-direction: row;
+
+      svg {
+        width: 60px;
+        margin-right: .5rem;
+
+        path {
+          fill: lightgreen;
+        }
+      }
     }
   }
 

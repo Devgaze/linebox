@@ -21,7 +21,7 @@ body p, body li {
   font-size: 1rem;
   line-height: 1.5;
 }
-body a, body a:link, body a:visited {
+body a:link, body a:visited {
   color: green;
   transition: all 0.25s;
 }
@@ -30,6 +30,14 @@ body a:hover, body a:active {
   background-color: green;
   color: white;
   text-decoration: none;
+}
+body .inverted-link:link, body .inverted-link:visited {
+  color: white;
+  text-decoration: underline white;
+}
+body .inverted-link:hover, body .inverted-link:active {
+  background-color: green;
+  color: white;
 }
 body .page-container {
   min-width: 360px;
@@ -177,28 +185,32 @@ body .intro p {
 }
 body .cta {
   background-color: green;
-}
-body .cta .page-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  max-width: 640px;
-}
-body .cta .cta-copy {
-  text-align: left;
   color: white;
 }
-body .cta .cta-copy p {
+body .cta .page-container {
+  max-width: 650px;
+}
+body .cta p {
   font-size: 0.9rem;
   padding-right: 1rem;
 }
-body .cta form {
-  text-align: right;
+body .cta .cta-copy {
+  text-align: left;
 }
 body .cta form input[type=submit] {
   background-color: #ddf4fc;
   color: #024460;
+}
+body .cta form .privacy-note {
+  display: flex;
+  flex-direction: row;
+}
+body .cta form .privacy-note svg {
+  width: 60px;
+  margin-right: 0.5rem;
+}
+body .cta form .privacy-note svg path {
+  fill: lightgreen;
 }
 body .animation {
   position: relative;

@@ -26,16 +26,28 @@ body {
     line-height: 1.5;
   }
 
-  a, a:link, a:visited {
-    color: green;
-    transition: all .25s;
-  }
+  a {
+     &:link, &:visited {
+      color: green;
+      transition: all .25s;
+    }
+    &:hover, &:active {
+      padding: 0 .5rem;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+    }
+  } 
   
-  a:hover, a:active {
-    padding: 0 .5rem;
-    background-color: green;
-    color: white;
-    text-decoration: none;
+  .inverted-link {
+    &:link, &:visited {
+      color: white;
+      text-decoration: underline white;
+    }
+    &:hover, &:active {
+      background-color: green;
+      color: white;
+    }
   }
   
   .page-container {
